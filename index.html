@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="design/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Fylo landing page with two column layout</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    /* small (phones) */
+    @media (min-width:768px) {
+      .container {
+        width: 750px;
+      }
+    }
+
+    /* mediam */
+    @media (min-width:992px) {
+      .container {
+        width: 970px;
+      }
+    }
+
+    /* large  */
+    @media (min-width: 1200px) {
+      .container {
+        width: 1250px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* end global*/
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 0;
+      font-family: 'Raleway', sans-serif;
+    }
+
+    header .container nav a {
+      padding: 20px;
+      text-decoration: none;
+      color: hsl(243, 87%, 12%);
+    }
+
+    @media (max-width:768px) {
+      header .container {
+        display: block;
+        text-align: center;
+      }
+
+      header .container nav {
+        margin-top: 30px;
+      }
+    }
+
+    /* end header */
+    section .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+
+    section .container img {
+      flex-basis: 50%;
+      max-width: 100%;
+      overflow: hidden;
+      height: 40vh;
+    }
+
+    section .info {
+      flex-basis: 46%;
+    }
+
+    section .info h2 {
+      font-size: 35px;
+      line-height: 1.4;
+    }
+
+    section .info p {
+      color: hsl(243, 87%, 12%);
+      font-size: 17px;
+      letter-spacing: .5px;
+    }
+
+    section .info form {
+      padding: 20px 0;
+    }
+
+    section .info form input[type="text"] {
+      padding: 8px;
+      width: 250px;
+    }
+
+    section .info form input[type="submit"] {
+      width: 170px;
+      padding: 10px;
+      border: none;
+      background-color: hsl(224, 93%, 58%);
+      color: white;
+      margin-left: 15px;
+    }
+
+    @media (max-width:758px) {
+      section .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+      }
+
+      section .container img {
+        order: -1;
+      }
+
+      section .info {
+        text-align: center;
+      }
+
+      section .info form input[type="submit"] {
+        margin-top: 30px;
+        width: 100%;
+        margin-left: 0;
+      }
+
+      section .info form input[type="text"] {
+        width: 100%;
+      }
+    }
+
+    /* end section */
+    .avatar {
+      background-color: #ddd;
+      padding: 60px 0;
+    }
+
+    .avatar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .avatar .av-left {
+      flex-basis: 50%;
+    }
+
+    .avatar .av-left-up h2 {
+      margin-bottom: 30px;
+      font-size: 35px;
+      font-weight: 900;
+    }
+
+    .avatar .av-left-up div {
+      display: flex;
+      border-bottom: 1px solid green;
+      width: fit-content;
+      color: green;
+      margin: 20px 0;
+    }
+
+    .avatar .av-left-up>p {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: hsl(243, 87%, 12%);
+    }
+
+    .avatar .av-left-up div svg {
+      background-color: green;
+      border-radius: 50%;
+      width: fit-content;
+      margin-left: 10px;
+    }
+
+    .avatar .av-left-down {
+      width: 300px;
+      background-color: white;
+      padding: 20px;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      margin-bottom: 40px;
+    }
+
+    .avatar .av-left-down>div {
+      display: flex;
+      align-items: center;
+    }
+
+    .avatar .av-left-down div img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    .avatar .av-left-down div div h2 {
+      font-size: 14px;
+      margin-left: 15px;
+    }
+
+    .avatar .av-left-down div div p {
+      font-size: 12px;
+      margin-left: 15px;
+    }
+
+    .avatar .av-left-down>p {
+      font-size: 15px;
+      margin: 10px 0;
+    }
+
+    .avatar .av-right {
+      flex-basis: 35%;
+      text-align: end;
+      height: 50vh;
+
+    }
+
+    .avatar .av-right img {
+      /* height: 60vh;
+      width: 86%; */
+      width: 100%;
+      height: 100%;
+    }
+
+    @media(max-width:768px) {
+      .avatar .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .avatar .av-right {
+        order: -1;
+      }
+
+      .avatar .av-right img {
+        width: 100%;
+        height: 300px;
+        transform: rotate(90deg);
+      }
+    }
+
+    /* end avatar */
+    .form {
+      background-color: hsl(238, 22%, 44%);
+    }
+
+    .form .container {
+      padding: 100px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .form .info {
+      flex-basis: 50%;
+    }
+
+    .form form {
+      flex-basis: 40%;
+    }
+
+    .form form input[type="text"] {
+      padding: 10px;
+      width: 450px;
+      outline: none;
+    }
+
+    .form form input[type="submit"] {
+      display: block;
+      padding: 15px;
+      width: 200px;
+      margin-top: 20px;
+      background-color: hsl(224, 93%, 58%);
+      border: none;
+      color: white;
+    }
+
+    .form .container .info h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .form .container .info p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: wheat;
+    }
+
+    @media(max-width:768px) {
+      .form .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form form input[type="text"] {
+        width: 100%;
+        margin-top: 30px;
+      }
+
+      .form form input[type="submit"] {
+        width: 100%;
+      }
+
+      .form form {
+        width: 80%;
+        text-align: center;
+      }
+
+      .form .container .info {
+        text-align: center;
+      }
+    }
+
+    /* end form */
+    footer {
+      background-color: hsl(243, 87%, 12%);
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      color: wheat;
+      padding: 100px 0;
+      align-items: center;
+    }
+
+    footer .container li {
+      margin-bottom: 20px;
+    }
+
+    footer .container .col-1>svg {
+      margin-bottom: 50px;
+      margin-top: -50px;
+    }
+
+    footer .container .col-1>div {
+      margin-bottom: 20px;
+    }
+
+    footer .container .col-1>div svg {
+      margin-right: 15px;
+    }
+
+    footer .container .col-4 i {
+      margin-right: 15px;
+    }
+
+    @media(max-width:768px) {
+      footer .container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 40px;
+      }
+
+      footer .container .col-1,
+      footer .container .col-2,
+      footer .container .col-3,
+      footer .container .col-4 {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <svg width="166" height="49" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+          <path id="a" d="M.014.03h93.96v48.29H.015z" />
+        </defs>
+        <g fill="none" fill-rule="evenodd">
+          <path
+            d="M0 14.13v.123l27.95 13.13L56 14.209v-.033L27.95 1 0 14.13zm10.077.062L27.95 5.795l17.877 8.397-17.877 8.396-17.874-8.396zM27.95 32.483L0 19.55v4.784l27.95 12.964L56 24.289v-4.784L27.95 32.483zm0 9.703L0 29.25v4.783L27.95 47 56 33.99v-4.784l-28.05 12.98z"
+            fill="#BDBAFA" />
+          <g transform="translate(72)">
+            <mask id="b" fill="#fff">
+              <use xlink:href="#a" />
+            </mask>
+            <path
+              d="M87.56 24.152a8.1 8.1 0 0 0-2.161-5.573 7.259 7.259 0 0 0-2.34-1.673 6.864 6.864 0 0 0-2.85-.601c-1.01 0-1.961.2-2.852.601a7.257 7.257 0 0 0-2.34 1.673 8.102 8.102 0 0 0-2.16 5.574 8.102 8.102 0 0 0 2.16 5.573 7.257 7.257 0 0 0 2.34 1.672 6.864 6.864 0 0 0 2.851.602c1.01 0 1.96-.2 2.852-.602a7.259 7.259 0 0 0 2.339-1.672 8.1 8.1 0 0 0 2.16-5.574zm6.415 0c0 1.932-.357 3.723-1.07 5.373a13.098 13.098 0 0 1-2.94 4.28c-1.247 1.205-2.71 2.156-4.388 2.854-1.678.699-3.468 1.048-5.369 1.048-1.9 0-3.683-.349-5.346-1.048a13.863 13.863 0 0 1-4.366-2.876 13.351 13.351 0 0 1-2.94-4.302c-.713-1.65-1.07-3.426-1.07-5.329 0-1.873.364-3.634 1.092-5.284a13.92 13.92 0 0 1 2.962-4.325 13.671 13.671 0 0 1 4.367-2.898 13.552 13.552 0 0 1 5.301-1.048c1.901 0 3.69.35 5.369 1.048 1.678.698 3.14 1.65 4.388 2.854 1.248 1.204 2.228 2.638 2.94 4.302.713 1.665 1.07 3.449 1.07 5.351zM64.258 36.905a8.6 8.6 0 0 1-1.715.58c-.638.148-1.3.222-1.982.222a9.84 9.84 0 0 1-2.74-.379 6.003 6.003 0 0 1-2.295-1.226c-.653-.565-1.173-1.3-1.56-2.207-.385-.907-.578-2-.578-3.277V.029h6.549v29.474c0 1.07.215 1.806.646 2.207.43.401.943.602 1.537.602.742 0 1.455-.223 2.138-.669v5.262zM50.492 11.22L38.908 41.854c-.861 2.289-1.99 3.939-3.386 4.95-1.396 1.01-3.06 1.515-4.99 1.515-.297 0-.623-.022-.98-.066a7.352 7.352 0 0 1-1.025-.201l-2.138-5.975a8.486 8.486 0 0 0 1.56.557c.534.134 1.039.201 1.514.201 1.01 0 1.93-.23 2.762-.691.832-.46 1.47-1.315 1.916-2.564l.891-2.586-9.935-25.773h6.995l5.925 16.588 5.57-16.588h6.905zM23.538 7.342H6.786v8.294h16.529v5.618H6.785v15.784H.015V1.412h23.524v5.93z"
+              fill="#000" mask="url(#b)" />
+          </g>
+        </g>
+      </svg>
+      <nav>
+        <a href="#"> Features</a>
+        <a href="#">Team</a>
+        <a href="#"> Sign In</a>
+      </nav>
+      </svg>
+    </div>
+  </header>
+  <section>
+    <div class="container">
+      <div class="info">
+        <h2> All your files in one secure location, accessible anywhere.</h2>
+        <p> Fylo stores your most important files in one secure location.
+          Access them wherever you need, share and collaborate with friends,
+          family, and co-workers.</p>
+        <form action="">
+          <input type="text" placeholder="enter ur email">
+          <input type="submit" value="get Started">
+        </form>
+      </div>
+      <img src="images/daniele-levis-pelusi-mkMSXR86kYY-unsplash.jpg" alt="">
+    </div>
+  </section>
+  <svg width="100%" height="114" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <path id="a" d="M0 0h1440v114H0z" />
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+      <mask id="b" fill="#fff">
+        <use xlink:href="#a" />
+      </mask>
+      <path d="M0 72.728C318.801 24.243 558.801 0 720 0c161.199 0 401.199 24.243 720 72.728v765.146H0V72.728z"
+        fill="#F8F8FE" mask="url(#b)" />
+    </g>
+  </svg>
+  <div class="avatar">
+    <div class="container">
+      <div class="av-left">
+        <div class="av-left-up">
+          <h2> Stay productive, wherever you are</h2>
+          <p> Never let location be an issue when accessing your files. Fylo has you
+            covered for all of your file storage needs.</p>
+          <p> Securely share files and folders with friends, family and colleagues for
+            live collaboration. No email attachments required!</p>
+          <div>
+            <p>See how Fylo works</p>
+            <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs>
+                <circle id="b" cx="6" cy="6" r="6" />
+                <filter x="-25%" y="-25%" width="150%" height="150%" filterUnits="objectBoundingBox" id="a">
+                  <feOffset in="SourceAlpha" result="shadowOffsetOuter1" />
+                  <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                  <feColorMatrix values="0 0 0 0 0.239215686 0 0 0 0 0.62745098 0 0 0 0 0.560784314 0 0 0 0.793506567 0"
+                    in="shadowBlurOuter1" />
+                </filter>
+              </defs>
+              <g fill="none" fill-rule="evenodd">
+                <g transform="translate(2 2)">
+                  <use fill="#000" filter="url(#a)" xlink:href="#b" />
+                  <use fill="#3DA08F" xlink:href="#b" />
+                </g>
+                <path d="M8.582 6l-.363.35 1.452 1.4H5.333v.5h4.338L8.22 9.65l.363.35 2.074-2z" fill="#FFF" />
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="av-left-down">
+          <svg width="13" height="12" xmlns="http://www.w3.org/2000/svg"><text transform="translate(-34 -25)"
+              fill="#07043B" fill-rule="evenodd" font-family="Helvetica" font-size="45">
+              <tspan x="33" y="56">“</tspan>
+            </text></svg>
+          <p> Fylo has improved our team productivity by an order of magnitude. Since
+            making the switch our team has become a well-oiled collaboration machine.</p>
+          <div>
+            <img src="images/avatar-testimonial.jpg" alt="">
+            <div>
+              <h2> Kyle Burton</h2>
+              <p> Founder & CEO, Huddle</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="av-right">
+        <img src="images/evie-s-uuCjYxJVf4o-unsplash.jpg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="form">
+    <div class="container">
+      <div class="info">
+        <h2> Get early access today</h2>
+        <p> It only takes a minute to sign up and our free starter tier is extremely generous.
+          If you have any questions, our support team would be happy to help you.</p>
+      </div>
+      <form action="">
+        <input type="text" placeholder="email@example.com">
+        <input type="submit" value="get started for free">
+      </form>
+    </div>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="col-1">
+        <svg width="166" height="49" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+            <path id="a" d="M.014.03h93.96v48.29H.015z" />
+          </defs>
+          <g fill="none" fill-rule="evenodd">
+            <path
+              d="M0 14.13v.123l27.95 13.13L56 14.209v-.033L27.95 1 0 14.13zm10.077.062L27.95 5.795l17.877 8.397-17.877 8.396-17.874-8.396zM27.95 32.483L0 19.55v4.784l27.95 12.964L56 24.289v-4.784L27.95 32.483zm0 9.703L0 29.25v4.783L27.95 47 56 33.99v-4.784l-28.05 12.98z"
+              fill="#BDBAFA" />
+            <g transform="translate(72)">
+              <mask id="b" fill="#fff">
+                <use xlink:href="#a" />
+              </mask>
+              <path
+                d="M87.56 24.152a8.1 8.1 0 0 0-2.161-5.573 7.259 7.259 0 0 0-2.34-1.673 6.864 6.864 0 0 0-2.85-.601c-1.01 0-1.961.2-2.852.601a7.257 7.257 0 0 0-2.34 1.673 8.102 8.102 0 0 0-2.16 5.574 8.102 8.102 0 0 0 2.16 5.573 7.257 7.257 0 0 0 2.34 1.672 6.864 6.864 0 0 0 2.851.602c1.01 0 1.96-.2 2.852-.602a7.259 7.259 0 0 0 2.339-1.672 8.1 8.1 0 0 0 2.16-5.574zm6.415 0c0 1.932-.357 3.723-1.07 5.373a13.098 13.098 0 0 1-2.94 4.28c-1.247 1.205-2.71 2.156-4.388 2.854-1.678.699-3.468 1.048-5.369 1.048-1.9 0-3.683-.349-5.346-1.048a13.863 13.863 0 0 1-4.366-2.876 13.351 13.351 0 0 1-2.94-4.302c-.713-1.65-1.07-3.426-1.07-5.329 0-1.873.364-3.634 1.092-5.284a13.92 13.92 0 0 1 2.962-4.325 13.671 13.671 0 0 1 4.367-2.898 13.552 13.552 0 0 1 5.301-1.048c1.901 0 3.69.35 5.369 1.048 1.678.698 3.14 1.65 4.388 2.854 1.248 1.204 2.228 2.638 2.94 4.302.713 1.665 1.07 3.449 1.07 5.351zM64.258 36.905a8.6 8.6 0 0 1-1.715.58c-.638.148-1.3.222-1.982.222a9.84 9.84 0 0 1-2.74-.379 6.003 6.003 0 0 1-2.295-1.226c-.653-.565-1.173-1.3-1.56-2.207-.385-.907-.578-2-.578-3.277V.029h6.549v29.474c0 1.07.215 1.806.646 2.207.43.401.943.602 1.537.602.742 0 1.455-.223 2.138-.669v5.262zM50.492 11.22L38.908 41.854c-.861 2.289-1.99 3.939-3.386 4.95-1.396 1.01-3.06 1.515-4.99 1.515-.297 0-.623-.022-.98-.066a7.352 7.352 0 0 1-1.025-.201l-2.138-5.975a8.486 8.486 0 0 0 1.56.557c.534.134 1.039.201 1.514.201 1.01 0 1.93-.23 2.762-.691.832-.46 1.47-1.315 1.916-2.564l.891-2.586-9.935-25.773h6.995l5.925 16.588 5.57-16.588h6.905zM23.538 7.342H6.786v8.294h16.529v5.618H6.785v15.784H.015V1.412h23.524v5.93z"
+                fill="#000" mask="url(#b)" />
+            </g>
+          </g>
+        </svg>
+        <div>
+          <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M17 12.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H1C.4 0 0 .4 0 1c0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1zM16 9h2c0-5-4-9-9-9v2c3.9 0 7 3.1 7 7zm-4 0h2c0-2.8-2.2-5-5-5v2c1.7 0 3 1.3 3 3z"
+              fill="#FFF" fill-rule="evenodd" />
+          </svg>
+          <span> Phone: +1-543-123-4567</span>
+        </div>
+        <div>
+          <svg width="20" height="16" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M18 0H2C.9 0 0 .9 0 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2zm0 14h-2V5.2L10 9 4 5.2V14H2V2h1.2L10 6.2 16.8 2H18v12z"
+              fill="#FFF" fill-rule="evenodd" />
+          </svg>
+          <span> example@fylo.com</span>
+        </div>
+      </div>
+      <div class="col-2">
+        <ul>
+          <li> About Us</li>
+          <li> Jobs</li>
+          <li> Press</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <ul>
+          <li> Contact Us</li>
+          <li> Terms</li>
+          <li> Privacy</li>
+        </ul>
+      </div>
+      <div class="col-4">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-linkedin"></i>
+      </div>
+    </div>
+  </footer>
+  <!-- <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer> -->
+</body>
+
+</html>
